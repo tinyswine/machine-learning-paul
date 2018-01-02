@@ -40,7 +40,7 @@ class LearningAgent(Agent):
         # Update epsilon using a decay function of your choice
         # Update additional class parameters as needed
         # If 'testing' is True, set epsilon and alpha to 0
-        a = 0.001047
+        a = 0.001
         self.epsilon = math.cos(a*self.count)
         self.count+=1
         if testing:
@@ -197,7 +197,7 @@ def run():
     #   display      - set to False to disable the GUI if PyGame is enabled
     #   log_metrics  - set to True to log trial and simulation results to /logs
     #   optimized    - set to True to change the default log file name
-    sim = Simulator(env, update_delay=0.00001, log_metrics=True, optimized=True)
+    sim = Simulator(env, update_delay=0.001, log_metrics=True, optimized=True)
     
     ##############
     # Run the simulator
