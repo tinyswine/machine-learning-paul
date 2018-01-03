@@ -42,6 +42,7 @@ class LearningAgent(Agent):
         # If 'testing' is True, set epsilon and alpha to 0
         a = 0.001
         self.epsilon = math.cos(a*self.count)
+        #self.epsilon = self.epsilon - 0.05
         self.count+=1
         if testing:
             self.epsilon = 0.0;
@@ -146,7 +147,7 @@ class LearningAgent(Agent):
         # When learning, implement the value iteration update rule
         #   Use only the learning rate 'alpha' (do not use the discount factor 'gamma')
         if self.learning:
-            self.Q[state][action] = self.Q[state][action]*(1-self.alpha) + (reward + self.get_maxQ(state)) * self.alpha
+            self.Q[state][action] = self.Q[state][action]*(1-self.alpha) + reward * self.alpha
         return
 
 
